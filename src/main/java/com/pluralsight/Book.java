@@ -5,13 +5,15 @@ public class Book {
     private String name;
     private String isbn;
     private String checkedOutBy;
-    private Boolean isCheckedOut;
+    private static Boolean isCheckedOut;
+    private int id;
 
-    public Book(String name, String isbn, Boolean isCheckedOut) {
+    public Book(int id, String name, String isbn, Boolean isCheckedOut) {
         this.name = name;
         this.isbn = isbn;
         this.checkedOutBy = checkedOutBy;
         this.isCheckedOut = isCheckedOut;
+        this.id = id;
     }
 
 
@@ -31,7 +33,7 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getCheckedOutBy() {
+    public String getCheckedOutBy(String userName) {
         return checkedOutBy;
     }
 
@@ -39,12 +41,20 @@ public class Book {
         this.checkedOutBy = checkedOutBy;
     }
 
-    public Boolean getCheckedOut() {
+    public static Boolean getCheckedOut() {
         return isCheckedOut;
     }
 
     public void setCheckedOut(Boolean checkedOut) {
         isCheckedOut = checkedOut;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
